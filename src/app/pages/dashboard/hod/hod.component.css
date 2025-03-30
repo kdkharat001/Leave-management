@@ -1,0 +1,61 @@
+.leave-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+  
+  .leave-card {
+    width: 300px;
+    padding: 15px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
+    background: #fff;
+  }
+  
+  .leave-card h3 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
+  .leave-card p {
+    margin: 5px 0;
+    font-size: 14px;
+  }
+  
+
+  .status {
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+  }
+  
+  .status.approved {
+    color: green;
+    font-size: 16px;
+  }
+  
+  .status.rejected {
+    color: red;
+    font-size: 16px;
+  }
+  
+  .actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+  }
+  
+  .approve-btn {
+    background-color: green;
+    color: white;
+  }
+  
+  .reject-btn {
+    background-color: red;
+    color: white;
+  }
+  

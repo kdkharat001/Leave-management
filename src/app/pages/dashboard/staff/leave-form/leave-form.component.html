@@ -1,0 +1,27 @@
+<h2 mat-dialog-title>Leave Details</h2>
+<mat-dialog-content>
+  <form [formGroup]="leaveForm" (ngSubmit)="onSubmit()">
+    <div class="date-pickers">
+      <mat-form-field appearance="fill">
+        <mat-label>From</mat-label>
+        <input matInput [matDatepicker]="fromPicker" formControlName="fromDate">
+        <mat-datepicker-toggle matSuffix [for]="fromPicker"></mat-datepicker-toggle>
+        <mat-datepicker #fromPicker></mat-datepicker>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>To</mat-label>
+        <input matInput [matDatepicker]="toPicker" formControlName="toDate">
+        <mat-datepicker-toggle matSuffix [for]="toPicker"></mat-datepicker-toggle>
+        <mat-datepicker #toPicker></mat-datepicker>
+      </mat-form-field>
+    </div>
+    <mat-form-field appearance="fill" class="reason-field">
+      <mat-label>Reason</mat-label>
+      <textarea matInput formControlName="reason"></textarea>
+    </mat-form-field>
+    <mat-dialog-actions align="end">
+      <button mat-button (click)="onCancel()">Cancel</button>
+      <button mat-raised-button color="primary" type="submit">Submit</button>
+    </mat-dialog-actions>
+  </form>
+</mat-dialog-content>

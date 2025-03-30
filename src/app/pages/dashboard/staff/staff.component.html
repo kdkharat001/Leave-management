@@ -1,0 +1,47 @@
+<div class="leave-card">
+  <mat-card-content>
+    <ng-template  #noRequests>
+      <p class="no-requests" >Not applied any leave yet</p>
+    </ng-template>
+    
+    <button mat-raised-button color="primary" (click)="openLeaveFormDialog()">
+      Apply Leave
+    </button>
+  </mat-card-content>
+</div>
+
+
+  <div class="leave-summary-container" *ngIf="appliedLeaves.length > 0 else noRequests">
+    <div class="summary-cards">
+      <mat-card class="summary-card">
+        <mat-card-title>Total Leaves</mat-card-title>
+        <mat-card-content>
+          <h1>{{ totalLeaves }}</h1>
+        </mat-card-content>
+      </mat-card>
+
+      <mat-card class="summary-card">
+        <mat-card-title>Approved</mat-card-title>
+        <mat-card-content>
+          <h1>{{ approvedLeaves }}</h1>
+        </mat-card-content>
+      </mat-card>
+
+      <mat-card class="summary-card">
+        <mat-card-title>Rejected</mat-card-title>
+        <mat-card-content>
+          <h1>{{ rejectedLeaves }}</h1>
+        </mat-card-content>
+      </mat-card>
+    </div>
+
+
+    <div class="card-body" *ngFor="let leave of appliedLeaves">
+      <div class="leave-details">
+        <h3><strong>Leave from </strong>{{ leave.fromDate | date }} <strong> to</strong> {{ leave.toDate | date }}</h3>
+        <p><strong>Number of days:</strong> {{ leave.days }}</p>
+        <p><strong>Reason:</strong> {{ leave.reason }}</p>
+        <p><strong>Status:</strong> {{ leave.status }}</p>
+      </div>
+    </div>
+  </div>

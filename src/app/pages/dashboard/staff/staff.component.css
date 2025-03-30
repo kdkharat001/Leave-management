@@ -1,0 +1,51 @@
+
+  .leave-card{
+    background-color: white;
+    width: 100%;
+    margin: 30px auto;
+    text-align: center;
+  }
+  mat-card-content,  .no-requests {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color : red;
+  }
+ 
+  button {
+    margin-top: 15px;
+  }
+
+  .leave-summary-container {
+    padding: 20px;
+  }
+  
+  .summary-cards {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  
+  .summary-card {
+    flex: 1;
+    margin: 0 10px;
+    text-align: center;
+    background-color: rgb(238, 229, 235);
+    padding: 10px;
+
+  }
+  
+  .summary-card h1 {
+    font-size: 35px;
+    margin: 0;
+  }
+ 
+  
+  .leave-details h3 {
+    margin: 0;
+    font-size: 16px;
+  }
+  
+  .leave-details p {
+    margin: 5px 0;
+  }

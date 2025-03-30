@@ -1,0 +1,22 @@
+<div class="leave-container">
+    <mat-card *ngFor="let request of leaveRequests" class="leave-card" [ngClass]="{'approved': request.status === 'approved', 'rejected': request.status === 'rejected'}">
+      <mat-card-content>
+        <h3>{{ request.firstName + ' ' + request.lastName  }}</h3>
+        <p><strong>Leave from:</strong> {{ request.fromDate | date }} <strong>to</strong> {{ request.toDate | date }}</p>
+        <p><strong>Number of days:</strong> {{ request.days }}</p>
+        <p><strong>Reason:</strong> {{ request.reason }}</p>
+        <p *ngIf="request.status === 'approved'" class="status approved"> Approved</p>
+        <p *ngIf="request.status === 'rejected'" class="status rejected"> Rejected</p>
+      </mat-card-content>
+  
+      <mat-card-actions *ngIf="request.status === 'pending'" class="actions">
+        <button mat-raised-button color="primary" class="approve-btn" (click)="approveLeave(request)">Approve</button>
+        <button mat-raised-button color="warn" class="reject-btn" (click)="rejectLeave(request)">Reject</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+  
+  <ng-template #noRequests>
+    <p class="no-requests">No leave requests available</p>
+  </ng-template>
+  
